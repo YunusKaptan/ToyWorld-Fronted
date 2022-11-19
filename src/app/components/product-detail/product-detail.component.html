@@ -1,1 +1,17 @@
-<p>product-detail works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Category Name</th>
+            <th>Units In Stock </th>
+        </tr>
+    </thead>
+    <tr *ngFor="let product of products">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.categoryName}</td>
+        <td>{{product.unitsInStock}}</td>
+    </tr>
+</table>
