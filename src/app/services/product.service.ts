@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
 import { ProductDetails } from '../models/productDetails';
-import { ProductResponseModel } from '../models/productResponseModel';
-
 @Injectable({
   providedIn: 'root'
 })

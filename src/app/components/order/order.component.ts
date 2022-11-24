@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { Order } from 'src/app/models/orders';
+import { OrderDetails } from 'src/app/models/orderDetails';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { OrderService } from 'src/app/services/order.service';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit{
-  order:Order[]=[];
+
+  orderDetails:OrderDetails[]=[];
 
   constructor(private orderService: OrderService){}
 
@@ -17,7 +18,7 @@ export class OrderComponent implements OnInit{
   }
   getOrders(){
     this.orderService.getOrders().subscribe(response =>{
-     this.order=response.data
+     this.orderDetails=response.data
     });
    }
  }
