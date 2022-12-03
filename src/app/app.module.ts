@@ -11,6 +11,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { OrderComponent } from './components/order/order.component';
+import { ProductImageComponent } from './components/product-image/product-image.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrderComponent } from './components/order/order.component';
     NaviComponent,
     CustomerComponent,
     ProductDetailComponent,
-    OrderComponent
+    OrderComponent,
+    ProductImageComponent
   ],
   imports: [
     BrowserModule,

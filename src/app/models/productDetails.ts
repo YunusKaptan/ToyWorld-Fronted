@@ -3,4 +3,5 @@ export interface ProductDetails{
  productName:string;
  categoryName:string;
  unitsInStock:number;
+ imagePath?:string[];
 }
