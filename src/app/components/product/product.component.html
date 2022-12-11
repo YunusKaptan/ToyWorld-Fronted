@@ -14,12 +14,15 @@
             <th>Units In Stock </th>
         </tr>
     </thead>
-    <tr *ngFor="let product of products | filterPipe:filterText" >
-        <td>{{product.productId}}</td>
-        <td>{{product.productName}}</td>
-        <td>{{product.categoryName}}</td>
-        <td>{{product.unitsInStock}}</td>
-        
-    </tr>
+    <tbody>
+        <tr *ngFor="let product of products | filterPipe:filterText" >
+            <td>{{product.productId}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.categoryName}}</td>
+            <td>{{product.unitsInStock}}</td>
+            <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Dodaj do koszyka</button>
+            </td>
+        </tr>
+    </tbody>    
 </table> 
 

@@ -73,4 +73,7 @@ export class ProductComponent implements OnInit {
     })
     return this.imageOfPath
   }
+  addToCart(product:Product){
+    console.log(product)
+  }
 }
