@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,6 +13,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { OrderComponent } from './components/order/order.component';
 import { ProductImageComponent } from './components/product-image/product-image.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { ProductImageComponent } from './components/product-image/product-image.
     CustomerComponent,
     ProductDetailComponent,
     OrderComponent,
-    ProductImageComponent
+    ProductImageComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

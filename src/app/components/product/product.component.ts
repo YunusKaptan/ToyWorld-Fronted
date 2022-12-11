@@ -20,6 +20,7 @@ export class ProductComponent implements OnInit {
   imageOfPath:string;  
   productImages:ProductImage[]=[];
   baseUrl="https://localhost:44372/Uploads/Images/"
+  filterText="";
 
   constructor(
   private productService : ProductService,

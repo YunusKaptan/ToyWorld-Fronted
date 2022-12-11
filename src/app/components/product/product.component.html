@@ -1,3 +1,10 @@
+<div class="mb-3">
+    <label for="filterText" class="form-label">Szukaj</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="szukaj zabawek">
+</div>
+<div *ngIf="filterText.length>2" class="alert alert-success">
+ {{filterText}} przeszukany
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -7,7 +14,7 @@
             <th>Units In Stock </th>
         </tr>
     </thead>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filterPipe:filterText" >
         <td>{{product.productId}}</td>
         <td>{{product.productName}}</td>
         <td>{{product.categoryName}}</td>
