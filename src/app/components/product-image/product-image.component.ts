@@ -9,12 +9,14 @@ import { ProductImageService } from 'src/app/services/product-image.service';
   styleUrls: ['./product-image.component.css']
 })
 export class ProductImageComponent implements OnInit{
+
   productImages: ProductImage[]=[];
+
   baseUrl="https://localhost:44372/Uploads/Images/"
 
   constructor(
-  private productImageSerbice:ProductImageService,
-  private activatedRoute:ActivatedRoute ){}
+  private productImageService:ProductImageService,
+  private activatedRoute:ActivatedRoute) {}
 
   ngOnInit():void{
     this.activatedRoute.params.subscribe(params=>{
@@ -24,7 +26,7 @@ export class ProductImageComponent implements OnInit{
     })
   }
   getProductImagesByProductId(carId:number){
-    this.productImageSerbice.getProductImagesByProductId(carId).subscribe(response=>{
+    this.productImageService.getProductImagesByProductId(carId).subscribe(response=>{
       this.productImages=response.data;
     })
   }

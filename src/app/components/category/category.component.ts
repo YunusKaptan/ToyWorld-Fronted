@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/category';
 
@@ -10,7 +9,7 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoryComponent implements OnInit{
   categories:Category[]=[];
-  currentCategory :Category;
+  currentCategory?:Category;
 
   constructor(
     private categoryService : CategoryService
@@ -28,8 +27,12 @@ export class CategoryComponent implements OnInit{
   setCurrentCategory(category:Category){
     this.currentCategory = category;
   }
+  clearCurrentCategory(){
+    this.currentCategory=undefined;
+  }
+
   getCurrentCategoryClass(category:Category){
-    if(category ==this.currentCategory){
+    if(category==this.currentCategory){
       return "list-group-item active"
     }else{
       return "list-group-item"

@@ -14,7 +14,7 @@ export class ProductImageService {
   constructor(private httpClient:HttpClient) { }
 
   getProductImages():Observable<ListResponseModel<ProductImage>>{
-    let newPath= this.apiUrl+"productImages/getall";
+    let newPath= this.apiUrl+ "productImages/getall";
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath);
   }
   getProductImagesByProductId(productId:number):Observable<ListResponseModel<ProductImage>>{

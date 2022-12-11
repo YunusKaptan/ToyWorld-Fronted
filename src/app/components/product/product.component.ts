@@ -24,6 +24,9 @@ export class ProductComponent implements OnInit {
   baseUrl="https://localhost:44372/Uploads/Images/"
   filterText="";
 
+  categoryFilter:number=0;
+
+
   constructor(
   private productService : ProductService,
   private productImageService : ProductImageService,
@@ -34,12 +37,14 @@ export class ProductComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
+    
   this.getCategories();
 
     this.activatedRoute.params.subscribe(params=>{
       if(params["categoryId"]){
-        this.getProductsByCategory(params["categoryId"])
-      }else{
+        this.getProductDetailsByCategoryId(params["categoryId"])
+      }
+      else{
         this.getProducts()
       }
     })
