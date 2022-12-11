@@ -4,9 +4,11 @@ import { ProductDetails } from 'src/app/models/productDetails';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Product } from 'src/app/models/product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductImageService } from 'src/app/services/product-image.service';
 import { ProductImage } from 'src/app/models/productImage';
+import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -26,7 +28,9 @@ export class ProductComponent implements OnInit {
   private productService : ProductService,
   private productImageService : ProductImageService,
   private categoryService: CategoryService,
-  private activatedRoute: ActivatedRoute
+  private activatedRoute: ActivatedRoute,
+  private toastrService: ToastrService,
+  private cartService: CartService
   ){}
 
   ngOnInit(): void {
@@ -74,6 +78,8 @@ export class ProductComponent implements OnInit {
     return this.imageOfPath
   }
   addToCart(product:Product){
-    console.log(product)
+    this.toastrService.success("Dodano do ulubionych", product.productName)
+    this.cartService.addToCart(product);
+
   }
 }

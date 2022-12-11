@@ -14,6 +14,10 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { OrderComponent } from './components/order/order.component';
 import { ProductImageComponent } from './components/product-image/product-image.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+
 
 @NgModule({
   declarations: [
@@ -25,13 +29,18 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     ProductDetailComponent,
     OrderComponent,
     ProductImageComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
