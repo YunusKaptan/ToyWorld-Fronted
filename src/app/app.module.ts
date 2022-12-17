@@ -18,6 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { PurchaseAddComponent } from './components/purchase-add/purchase-add.component';
 
 
 @NgModule({
@@ -32,13 +34,16 @@ import { PurchaseComponent } from './components/purchase/purchase.component';
     ProductImageComponent,
     FilterPipePipe,
     CartSummaryComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    PaymentComponent,
+    PurchaseAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,    
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"

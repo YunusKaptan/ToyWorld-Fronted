@@ -6,7 +6,7 @@ export interface PurchaseDetails{
     categoryName:string;
     postAddress:string;
     email:string;
-    orderDate:Date;
+    purchaseDate:Date;
     customerName:string;
     customerLastname:string;
 }
