@@ -9,7 +9,7 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class PurchaseService {
-  apiUrl="https://localhost:44372/api/purchases"
+  apiUrl="https://localhost:44372/api/purchases/"
   constructor(private httpClient:HttpClient) { }
 
   getPurchases():Observable<ListResponseModel<PurchaseDetails>> {
@@ -17,7 +17,7 @@ export class PurchaseService {
     return this.httpClient.get<ListResponseModel<PurchaseDetails>>(newPath);
   }
   isProductAvailable(productId:number){
-    let newPath= this.apiUrl+"/isproductavaible?productId?productId="+productId;
+    let newPath= this.apiUrl+"isproductavaible?productId?productId="+productId;
     return this.httpClient.get<ResponseModel>(newPath);
   }
 }

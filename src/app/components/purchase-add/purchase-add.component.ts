@@ -48,21 +48,21 @@ createPurchaseAddForm() {
     purchaseDate: ['', Validators.required]
   });
 }
-isProductAvaible() {
-  if (this.purchaseAddForm.valid) {
+isProductAvailable(){
+  if(this.purchaseAddForm.valid){
     this.purchaseService
-      .isProductAvailable(this.productDetail[0].productId)
-      .subscribe((response) => {
-        this.toastrService.success(response.message, 'Successed');
-        this.sendData();
-        this.router.navigate(["/products/payment",this.productDetail[0].productId])
-
-      },
-      (responseError)=>{
-        this.toastrService.error(responseError.error)
-      }
-      );
-  } 
+    .isProductAvailable(this.productDetail[0].productId)
+    .subscribe((response)=>{
+      this.toastrService.success(response.message,'Successed');
+      this.sendData();
+      this.router.navigate(["/products/payment",this.productDetail[0].productId])
+    }
+    ,
+    (responseError)=>{
+      this.toastrService.error(responseError.error)
+    }
+    );
+} 
 }
 sendData(){
   this.categoryOfPurchase=Object.assign({},this.purchaseAddForm.value);
