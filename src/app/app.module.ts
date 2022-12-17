@@ -17,6 +17,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     OrderComponent,
     ProductImageComponent,
     FilterPipePipe,
-    CartSummaryComponent
+    CartSummaryComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,
