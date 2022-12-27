@@ -20,6 +20,7 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PurchaseAddComponent } from './components/purchase-add/purchase-add.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PurchaseAddComponent } from './components/purchase-add/purchase-add.com
     CartSummaryComponent,
     PurchaseComponent,
     PaymentComponent,
-    PurchaseAddComponent
+    PurchaseAddComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
