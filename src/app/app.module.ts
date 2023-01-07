@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,14 @@ import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PurchaseAddComponent } from './components/purchase-add/purchase-add.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { JwtModule } from "@auth0/angular-jwt";
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 
 
 @NgModule({
@@ -38,7 +46,9 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     PurchaseComponent,
     PaymentComponent,
     PurchaseAddComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +59,17 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
-    })
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["http://localhost:4200/"]
+      },
+    }),
+],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
