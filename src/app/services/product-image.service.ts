@@ -21,6 +21,7 @@ export class ProductImageService {
     let newPath= this.apiUrl+"productImages/getbyproductid?productId="+productId;
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath);
   }
+  
 }
 
 

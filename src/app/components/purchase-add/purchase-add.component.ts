@@ -45,7 +45,7 @@ getProductDetailsByProductId(productId: number) {
 
 createPurchaseAddForm() {
   this.purchaseAddForm = this.formBuilder.group({
-    purchaseDate: ['', Validators.required]
+    //purchaseDate: ['', Validators.required]
   });
 }
 isProductAvailable(){
