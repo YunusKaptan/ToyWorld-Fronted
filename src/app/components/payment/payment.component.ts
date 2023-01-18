@@ -37,7 +37,7 @@ ngOnInit(): void {
       productId:this.productId,
       customerId:0,
     }
-     this.paymentService.add(purchase).subscribe(response=>{
+      this.paymentService.add(purchase).subscribe(response=>{
       this.toastrService.success(response.message)
       this.toastrService.success("Product has purchased")
     },
