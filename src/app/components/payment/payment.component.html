@@ -1,73 +1,108 @@
-<div class="card text-center card text-white  mt-5" >
-    <div class="card-header bg-success"  >
-      Payment 
-    </div>
-    <div class="table">
-      <tr>
-        <!-- <th>Number of Days to Rent: {{rentalDay}}</th>
-      </tr>
-      <tr>
-        <th> Amount to be paid: {{totalAmountInfo}}  </th> -->
-      </tr>
-    </div>
+<!-- <div class="card text-center card text-white  mt-5" >
+  <div class="card-header bg-success"  >
+    Payment 
   </div>
-  <br>
-  <div class="col-12 mt-3">
-    
+</div>
+<br>
+<div class="col-12 mt-3">
+  
+  <input
+    class="form-control"
+    type="text"
+    placeholder="Imię i nazwisko na karcie"
+    aria-label="default input example"
+    style="text-align: center"
+  />
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4">
+    <label for="creditCardNumber" class="form-label">Card Number </label>     
     <input
       class="form-control"
       type="text"
-      placeholder="Imię i nazwisko na karcie"
+      placeholder="xxxx-xxxx-xxxx-xxxx"
       aria-label="default input example"
       style="text-align: center"
+      maxlength="16"
+      id="creditCardNumber"
+      type="tel"
     />
   </div>
-  <br>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-md-4">
-      <label for="creditCardNumber" class="form-label">Card Number </label>     
-      <input
-        class="form-control"
-        type="text"
-        placeholder="xxxx-xxxx-xxxx-xxxx"
-        aria-label="default input example"
-        style="text-align: center"
-        maxlength="16"
-        id="creditCardNumber"
-        type="tel"
-      />
-    </div>
-  
-    <div class="col-md-4">
-      <label for="expirationDate" class="form-label">Expiration date</label>
-      <input
-        class="form-control"
-        type="text"
-        placeholder="__/__"
-        aria-label="default input example"
-        style="text-align: center"
-        id="expirationDate"
-        maxlength="5"
-         
-      />
-    </div>
-    <div class="col-md-4">
-      <label for="securityCode" class="form-label">Security Code</label>
-      <input
-        class="form-control"
-        type="text"
-        placeholder="___"
-        aria-label="default input example"
-        style="text-align: center"
-        id="securityCode" 
-        maxlength="3" 
-      />
-    </div>
+
+  <div class="col-md-4">
+    <label for="expirationDate" class="form-label">Expiration date</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="__/__"
+      aria-label="default input example"
+      style="text-align: center"
+      id="expirationDate"
+      maxlength="5"
+       
+    />
   </div>
-  <br>
-  <br>
-  <div class="col-12 d-flex justify-content-end">
-      <button type="submit" class="btn btn-outline-success"  (click)="add()" >Pay </button> 
+  <div class="col-md-4">
+    <label for="securityCode" class="form-label">Security Code</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="___"
+      aria-label="default input example"
+      style="text-align: center"
+      id="securityCode" 
+      maxlength="3" 
+    />
+  </div>
+</div>
+<br>
+<br>
+<div class="col-12 d-flex justify-content-end">
+    <button type="submit" class="btn btn-outline-success"  (click)="add()" >Pay </button> 
+  </div> -->
+
+
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Np Jana Kochanowskiego XX">
+      </div>
+    <div class="form-group col-md-6">
+      <label for="inputCity">Miasto</label>
+      <input type="text" class="form-control" id="inputCity">
     </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputdom">Numer domu</label>
+          <input type="number" class="form-control" id="inputdom">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputmieszkanie">Numer mieszkanie</label>
+          <input type="number" class="form-control" id="inputmieszkanie">
+        </div>
+      </div>
+    </form>
+    <ul><hr class="dropdown-divider"></ul>
+    <div class="col-12 d-flex justify-content-start">
+      <button type="submit" class="btn btn-outline-success"  (click)="add()" >Zakończyć Zamówienie </button> 
+    </div>  
+   
+
+
+
+
+
+

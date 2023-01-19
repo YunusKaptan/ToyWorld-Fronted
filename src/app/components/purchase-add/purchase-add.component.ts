@@ -50,10 +50,14 @@ createPurchaseAddForm() {
 }
 isProductAvailable(){
   if(this.purchaseAddForm.valid){
+    console.log("islem1")
     this.purchaseService
     .isProductAvailable(this.productDetail[0].productId)
     .subscribe((response)=>{
+      console.log("islem2")
+
       this.toastrService.success(response.message,'Successed');
+      console.log("islem3")
       this.sendData();
       this.router.navigate(["/products/payment",this.productDetail[0].productId])
     }

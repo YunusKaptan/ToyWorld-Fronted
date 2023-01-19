@@ -33,16 +33,29 @@ ngOnInit(): void {
 
   add(){
     let purchase:Purchase ={
-      purchaseDate:this.purchaseDate,
+      //purchaseDate:this.purchaseDate,
       productId:this.productId,
-      customerId:0,
+      userId:0,
     }
-      this.paymentService.add(purchase).subscribe(response=>{
+    console.log("basladi")
+
+    this.paymentService.add(purchase).subscribe(response=>{
+      console.log("islem devam ediyor")
       this.toastrService.success(response.message)
-      this.toastrService.success("Product has purchased")
+      this.toastrService.success("Product has purchased successfully")
     },
     (responseError)=>{
       this.toastrService.error(responseError.error)
-    }) 
+    })
   }
 }
+    // console.log("basladi")
+    //   this.paymentService.add(purchase).subscribe(response=>{
+    //   console.log("islem1")
+    //   this.toastrService.success(response.message)
+    //   this.toastrService.success("Product has purchased")
+    // },
+    // (responseError)=>{
+    //   this.toastrService.error(responseError.error)
+    // }) 
+
