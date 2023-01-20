@@ -8,15 +8,22 @@
     text-shadow: 1px 1px 0 rgb(219, 29, 29);
     opacity: 1;
 }
-.btn-success{
+.btn-primary{
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 0 rgb(255, 5, 5);
+    gap:20px;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-left: 1px;
 
 }
 .nav-item{
-    font-size: 24px;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap:20px;
+    padding: 10px 5px;
+    /* font-size: 24px;
     text-shadow: 1px 1px 0 rgb(208, 255, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 
 }

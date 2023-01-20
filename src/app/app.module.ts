@@ -27,6 +27,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { JwtModule } from "@auth0/angular-jwt";
 import { UserComponent } from './components/user/user.component';
 
+
 export function tokenGetter() {
   return localStorage.getItem("access_token");
 }
