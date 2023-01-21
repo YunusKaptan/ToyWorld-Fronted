@@ -16,6 +16,9 @@ export class PaymentService {
   updateData(data:Purchase){
     this.dataSource.next(data);
   }
+  // add(purchase:Purchase):Observable<ResponseModel>{
+  //   return this.httpClient.post<ResponseModel>(this.apiUrl+"purchase/add",purchase)
+  // }
   add(purchase:Purchase):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+"purchase/add",purchase)
   }

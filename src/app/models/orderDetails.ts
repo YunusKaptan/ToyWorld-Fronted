@@ -7,6 +7,6 @@ export interface OrderDetails{
     postAddress:string;
     email:string;
     orderDate:Date;
-    customerName:string;
-    customerLastname:string;
+    userName:string;
+    userLastname:string;
 }

@@ -14,6 +14,7 @@ import { PurchaseService } from 'src/app/services/purchase.service';
   styleUrls: ['./purchase-add.component.css']
 })
 export class PurchaseAddComponent implements OnInit{
+
 purchaseAddForm: FormGroup;
 productDetail:ProductDetails[];
 categoryOfPurchase: Purchase;
@@ -46,9 +47,12 @@ getProductDetailsByProductId(productId: number) {
 createPurchaseAddForm() {
   this.purchaseAddForm = this.formBuilder.group({
     //purchaseDate: ['', Validators.required]
+    
   });
 }
 isProductAvailable(){
+
+  //musteri bilgileri girildikten sonra successed mesaji alinmali
   if(this.purchaseAddForm.valid){
     console.log("islem1")
     this.purchaseService
@@ -56,10 +60,11 @@ isProductAvailable(){
     .subscribe((response)=>{
       console.log("islem2")
 
-      this.toastrService.success(response.message,'Successed');
+      this.toastrService.info(response.message,'Fill in the information to complete the order.');
       console.log("islem3")
       this.sendData();
       this.router.navigate(["/products/payment",this.productDetail[0].productId])
+
     }
     ,
     (responseError)=>{
@@ -68,6 +73,7 @@ isProductAvailable(){
     );
 } 
 }
+
 sendData(){
   this.categoryOfPurchase=Object.assign({},this.purchaseAddForm.value);
   this.paymentService.updateData(this.categoryOfPurchase)

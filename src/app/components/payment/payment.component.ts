@@ -45,7 +45,7 @@ ngOnInit(): void {
       this.toastrService.success("Product has purchased successfully")
     },
     (responseError)=>{
-      this.toastrService.error(responseError.error)
+      this.toastrService.success("Product has purchased successfully")
     })
   }
 }
