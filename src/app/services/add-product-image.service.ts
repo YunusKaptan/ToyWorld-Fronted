@@ -1,14 +1,28 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
+import { Injectable, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { ProductImageService } from './product-image.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AddProductImageService {
+export class AddProductImageService implements OnInit {
 
   apiUrl="https://localhost:44372/api/"
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(
+    private httpClient:HttpClient,
+    private productService:ProductImageService,
+    private toastService:ToastrService,
+    private productImageService:ProductImageService
+    ) { }
 
-  
+  ngOnInit(): void {
+      
+  }
 }

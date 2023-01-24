@@ -29,6 +29,12 @@ export class ProductAddComponent implements OnInit {
     this.createProductAddForm();
   }
 
+  // createProductImageAddForm(){
+  //   this.createProductImageAddForm=this.formBuilder.group({
+
+  //   })
+  // }
+
   createProductAddForm() {
     this.productAddForm = this.formBuilder.group({
       productName: ['', Validators.required],
@@ -55,6 +61,8 @@ export class ProductAddComponent implements OnInit {
   add() {
     if (this.productAddForm.valid) {
       let productModel = Object.assign({}, this.productAddForm.value);
+      //let productImageModel = Object.assign({}, this.productAddForm.value)
+      //this.productImageService.add(productImageModel)
       this.productService.add(productModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Success');

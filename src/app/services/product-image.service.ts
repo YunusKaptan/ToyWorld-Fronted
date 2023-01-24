@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, ObservedValueOf} from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ProductImage } from '../models/productImage';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,9 @@ export class ProductImageService {
   getProductImagesByProductId(productId:number):Observable<ListResponseModel<ProductImage>>{
     let newPath= this.apiUrl+"productImages/getbyproductid?productId="+productId;
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath);
+  }
+  add(productImage:ProductImage):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"productImages/add", productImage)
   }
   
 }
