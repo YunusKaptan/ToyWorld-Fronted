@@ -26,107 +26,106 @@
 </div>
 
  -->
-
-<div class="content">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header"><h5 class="title">Add Product</h5></div>
-      <div class="card-body">
-        <form [formGroup]="productAddForm">
-
-
-          <div class="mb-3">
-            <label for="img">Select image:</label>
+    <div class="content bg-warning">
+      <div class="col-md-12 bg-warning">
+        <div class="card bg-warning">
+          <div class="card-header" ><h5 class="title">Dodaj Produkt</h5></div>
+          <div class="card-body">
+            <form [formGroup]="productAddForm">
+    
+    
+              <div class="mb-3">
+                <label for="img">Choose image:</label>
+                    <div class="form-group">
+                      <input
+                        type="file"
+                        id="productImage"
+                        formControlName="productImage"
+                        class="form-control"
+                        placeholder="Product Image"
+                      />
+                    </div>
+                  </div>
+    
+    
+    
+              <div class="mb-3">
+                <label for="productName">Product Name</label>
                 <div class="form-group">
                   <input
-                    type="file"
-                    id="productImage"
-                    formControlName="productImage"
+                    type="text"
+                    id="productName"
+                    formControlName="productName"
                     class="form-control"
-                    placeholder="Product Image"
+                    placeholder="Product Name"
                   />
                 </div>
               </div>
-
-
-
-          <div class="mb-3">
-            <label for="productName">Product Name</label>
-            <div class="form-group">
-              <input
-                type="text"
-                id="productName"
-                formControlName="productName"
-                class="form-control"
-                placeholder="Product Name"
-              />
-            </div>
+    
+    
+              <div class="mb-3">
+                <label for="categoryName">Category Name: </label>
+                <select id="categoryName" name="CategoryList" formControlName="categoryName">
+                  <option value="0-3 lata">0-3 lata</option>
+                  <option value="3-7 lat">3-7 lat</option>
+                  <option value="7-9 lat">7-9 lat</option>
+                  <option value="9-11 lat">9-11 lat</option>
+                </select>
+    
+    
+                <!-- <label for="categoryName">Category Name</label>
+                            <div class="form-group">
+                                <input type="text" 
+                                id="categoryName" 
+                                formControlName="categoryName" 
+                                class="form-control"
+                                placeholder="Category Name"/>
+                            </div> -->
+              </div>
+    
+    
+                <!-- <label for="categoryId">Category ID: </label>
+                <select id="categoryId" name="CategoryIdList" formControlName="categoryId">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select> -->
+    
+              <div class="mb-3">
+                <label for="categoryId">Category Id</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="categoryId"
+                    formControlName="categoryId"
+                    class="form-control"
+                    placeholder="Category"
+                  />
+                </div> 
+              </div>
+    
+    
+    
+              <div class="mb-3">
+                <label for="unitsInStock">Units In Stock</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="unitsInStock"
+                    formControlName="unitsInStock"
+                    class="form-control"
+                    placeholder="Units In Stock "
+                  />
+                </div>
+              </div>
+    
+            </form>
           </div>
-
-
-          <div class="mb-3">
-            <label for="categoryName">Category Name: </label>
-            <select id="categoryName" name="CategoryList" formControlName="categoryName">
-              <option value="0-3 lata">0-3 lata</option>
-              <option value="3-7 lat">3-7 lat</option>
-              <option value="7-9 lat">7-9 lat</option>
-              <option value="9-11 lat">9-11 lat</option>
-            </select>
-
-
-            <!-- <label for="categoryName">Category Name</label>
-                        <div class="form-group">
-                            <input type="text" 
-                            id="categoryName" 
-                            formControlName="categoryName" 
-                            class="form-control"
-                            placeholder="Category Name"/>
-                        </div> -->
+          <div class="card-footer">
+            <button class="btn btn-fill btn-success" (click)="add()">Add</button>
           </div>
-
-
-          <div class="mb-3">
-            <!-- <label for="categoryId">Category ID: </label>
-            <select id="categoryId" name="CategoryIdList" formControlName="categoryId">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select> -->
-
-
-            <label for="categoryId">Category Id</label>
-            <div class="form-group">
-              <input
-                type="number"
-                id="categoryId"
-                formControlName="categoryId"
-                class="form-control"
-                placeholder="Category"
-              />
-            </div> 
-          </div>
-
-
-
-          <div class="mb-3">
-            <label for="unitsInStock">Units In Stock</label>
-            <div class="form-group">
-              <input
-                type="number"
-                id="unitsInStock"
-                formControlName="unitsInStock"
-                class="form-control"
-                placeholder="Units In Stock "
-              />
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-fill btn-success" (click)="add()">Add</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  
