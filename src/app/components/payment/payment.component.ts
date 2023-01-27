@@ -42,10 +42,10 @@ ngOnInit(): void {
     this.paymentService.add(purchase).subscribe(response=>{
       console.log("islem devam ediyor")
       this.toastrService.success(response.message)
-      this.toastrService.success("Product has purchased successfully")
+      this.toastrService.success("Product successfully received")
     },
     (responseError)=>{
-      this.toastrService.success("Product has purchased successfully")
+      this.toastrService.success("Product successfully received")
     })
   }
 }
