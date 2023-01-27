@@ -31,15 +31,15 @@
     <h5 class="card-title">{{ product.categoryName }}</h5>
 </div>
 <ul class="list-group list-group-flush">
-    <li class="list-group-item">Product Name: {{ product.productName }} </li>
-    <li class="list-group-item">Category Name: {{ product.categoryName }}</li>
-    <li class="list-group-item">Units In Stock: {{ product.unitsInStock  }} </li>
+    <li class="list-group-item">Nazwa produktu: {{ product.productName }} </li>
+    <li class="list-group-item">Nazwa Kategorii: {{ product.categoryName }}</li>
+    <li class="list-group-item">Jednostki w magazynie: {{ product.unitsInStock  }} </li>
  </ul>
 
  <div class="card-body">
     <div class="row">
       <button type="button" 
-        class="btn btn-outline-success" routerLink="/products/productDetails/{{product.productId}}" >Product Details</button>
+        class="btn btn-outline-success" routerLink="/products/productDetails/{{product.productId}}" >Szczegóły Produktu</button>
         <button (click)="addToCart(product)" class="btn btn-outline-success">Dodaj do ulubionych</button>
     </div>
   </div>
